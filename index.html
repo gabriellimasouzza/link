@@ -1,168 +1,188 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ezer.app | Links</title>
-    
-    <!-- Importando fonte moderna do Google Fonts parecida com a da sua logo -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-    
-    <!-- Importando ícones (Android e Apple) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ezer.app — Sua vida com Deus, um dia de cada vez</title>
+  <meta name="description" content="Devocionais diários, devocionais em dupla e jejum em grupo. Baixe o Ezer.app.">
+  <meta property="og:title" content="Ezer.app — Sua vida com Deus, um dia de cada vez">
+  <meta property="og:description" content="Devocionais diários, devocionais em dupla e jejum em grupo.">
+  <meta name="theme-color" content="#F7F1E8">
 
-    <style>
-        /* Paleta de Cores extraída da sua marca */
-        :root {
-            --bg-color: #f6f5ef; /* Fundo creme claro */
-            --blue: #173554;     /* Azul Marinho Ezer */
-            --gold: #c39152;     /* Dourado/Mostarda .app */
-        }
+  <style>
+    /* ===== CORES DO APP — ajuste aqui ===== */
+    :root {
+      --creme: #F7F1E8;
+      --azul: #173759;
+      --azul-suave: rgba(23, 55, 89, 0.72);
+      --azul-linha: rgba(23, 55, 89, 0.2);
+      --azul-fundo: rgba(23, 55, 89, 0.06);
+      --dourado: #C99252;
+    }
 
-        body {
-            background-color: var(--bg-color);
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            color: var(--blue);
-        }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        .container {
-            width: 100%;
-            max-width: 450px; /* Mantém estreito como a tela de um celular */
-            padding: 40px 20px;
-            text-align: center;
-            box-sizing: border-box;
-        }
+    html, body { min-height: 100%; }
 
-        /* Estilo da Logo */
-        .logo {
-            width: 110px;
-            height: auto;
-            margin-bottom: 15px;
-            /* Filtro leve de sombra para destacar no fundo */
-            filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.1)); 
-        }
+    body {
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: max(24px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom));
+      background: var(--creme);
+      color: var(--azul);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        /* Título e Slogan */
-        .brand-name {
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin: 0 0 5px 0;
-            letter-spacing: -1.5px;
-        }
-        
-        .brand-name span.ezer { color: var(--blue); }
-        .brand-name span.app { color: var(--gold); font-weight: 600;}
+    main {
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+    }
 
-        .slogan {
-            font-size: 1rem;
-            font-weight: 400;
-            margin-top: 0;
-            margin-bottom: 40px;
-            color: var(--blue);
-            opacity: 0.85;
-            letter-spacing: 0.5px;
-        }
+    .logo {
+      height: 120px;
+      margin: 0 auto 20px;
+    }
+    .logo img {
+      display: block;
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+      margin: 0 auto;
+      object-fit: contain;
+    }
 
-        /* Container dos Botões */
-        .links-container {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+    h1 span { color: var(--dourado); }
 
-        /* Estilo base dos botões */
-        .link-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 18px 20px;
-            border-radius: 50px; /* Formato de pílula (moderno) */
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            transition: all 0.3s ease;
-            box-sizing: border-box;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
+    .traco {
+      width: 56px;
+      height: 4px;
+      margin: 14px auto 16px;
+      border-radius: 4px;
+      background: var(--dourado);
+    }
 
-        .link-btn i {
-            margin-right: 12px;
-            font-size: 1.3rem;
-        }
+    .texto {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: var(--azul-suave);
+      margin-bottom: 20px;
+    }
 
-        /* Botão 1: Android (Destaque) */
-        .btn-primary {
-            background-color: var(--blue);
-            color: var(--bg-color);
-            border: 2px solid var(--blue);
-        }
+    .recursos {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+    .recursos li {
+      padding: 8px 14px;
+      border: 1px solid var(--azul-linha);
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      background: var(--azul-fundo);
+    }
 
-        .btn-primary:hover {
-            background-color: transparent;
-            color: var(--blue);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(23, 53, 84, 0.2);
-        }
+    .botoes {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
 
-        /* Botão 2: iOS (Em Breve) */
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--gold);
-            border: 2px solid var(--gold);
-            cursor: not-allowed; /* Mostra que o link não é clicável no momento */
-            opacity: 0.8;
-        }
+    .botao {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      min-height: 56px;
+      padding: 0 20px;
+      border-radius: 14px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
 
-        .btn-secondary:hover {
-            background-color: var(--gold);
-            color: var(--bg-color);
-            opacity: 1;
-        }
+    .botao svg { width: 20px; height: 20px; flex: none; }
 
-        /* Rodapé opcional discreto */
-        .footer {
-            margin-top: 50px;
-            font-size: 0.8rem;
-            opacity: 0.5;
-        }
-    </style>
+    .botao-android {
+      background: var(--azul);
+      color: var(--creme);
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+    .botao-android svg { color: var(--dourado); }
+    .botao-android:hover { filter: brightness(1.15); }
+    .botao-android:active { transform: scale(0.98); }
+
+    .botao-iphone {
+      border: 1px solid var(--azul-linha);
+      color: var(--azul-suave);
+      cursor: not-allowed;
+      user-select: none;
+    }
+
+    .botao:focus-visible {
+      outline: 3px solid var(--dourado);
+      outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .botao-android { transition: none; }
+    }
+  </style>
 </head>
 <body>
+  <main>
 
-    <div class="container">
-        <!-- Ícone do App -->
-        <img src="icon.png" alt="Logo Ezer" class="logo">
-        
-        <!-- Nome formatado com as cores da marca -->
-        <h1 class="brand-name"><span class="ezer">Ezer</span><span class="app">.app</span></h1>
-        
-        <!-- Slogan -->
-        <p class="slogan">Sua vida com Deus, um dia de cada vez.</p>
-
-        <!-- Links -->
-        <div class="links-container">
-            <!-- Coloque o link da Play Store no href abaixo no lugar da # -->
-            <a href="#" class="link-btn btn-primary">
-                <i class="fab fa-google-play"></i> ANDROID - Baixe aqui!
-            </a>
-            
-            <!-- Link desativado (event.preventDefault evita que a tela pule pro topo se a pessoa clicar) -->
-            <a href="#" class="link-btn btn-secondary" onclick="event.preventDefault();">
-                <i class="fab fa-apple"></i> iOS: Em breve
-            </a>
-        </div>
-
-        <div class="footer">
-            © Ezer.app | Gabriel Lima de Souza
-        </div>
+    <!-- LOGO: troque o endereço em src pela URL da sua logo -->
+    <div class="logo">
+      <img src="URL_DA_LOGO_AQUI" alt="Logo do Ezer.app">
     </div>
 
+    <!-- Se a sua logo já trouxer o nome "Ezer.app" escrito, apague esta linha e a do traço abaixo -->
+    <h1>Ezer<span>.app</span></h1>
+    <div class="traco"></div>
+
+    <p class="texto">Sua vida com Deus, um dia de cada vez.</p>
+
+    <ul class="recursos">
+      <li>Devocionais diários</li>
+      <li>Devocionais em dupla</li>
+      <li>Séries devocionais por temas</li>
+      <li>Ouvir devocionais</li>
+      <li>Jejum em grupo</li>
+      <li>Sequência diária</li>
+    </ul>
+
+    <div class="botoes">
+
+      <!-- ANDROID: troque o href pelo link do app na Play Store -->
+      <a class="botao botao-android" href="LINK_DO_ANDROID_AQUI" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 4v11"/><path d="M7 11l5 5 5-5"/><path d="M5 20h14"/>
+        </svg>
+        Baixar para Android
+      </a>
+
+      <!-- IPHONE: sem link por enquanto -->
+      <span class="botao botao-iphone" aria-disabled="true">
+        iPhone — em breve
+      </span>
+
+    </div>
+
+  </main>
 </body>
 </html>
